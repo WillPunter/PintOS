@@ -1,0 +1,108 @@
+            +----------------------+
+            |        OS 211        |
+            |  TASK 1: SCHEDULING  |
+            |    DESIGN DOCUMENT   |
+            +----------------------+
+                   
+---- GROUP ----
+
+>> Fill in the names and email addresses of your group members.
+
+FirstName LastName <email@domain.example>
+FirstName LastName <email@domain.example>
+FirstName LastName <email@domain.example>
+
+---- PRELIMINARIES ----
+
+>> If you have any preliminary comments on your submission, or notes for the
+>> markers, please give them here.
+
+>> Please cite any offline or online sources you consulted while preparing your 
+>> submission, other than the PintOS documentation, course text, lecture notes 
+>> and course staff.
+
+             PRIORITY SCHEDULING
+             ===================
+
+---- DATA STRUCTURES ----
+
+>> A1: (2 marks) 
+>> Copy here the declaration of each new or changed `struct' or `struct' member,
+>> global or static variable, `typedef', or enumeration.  
+>> Identify the purpose of each in roughly 25 words.
+
+>> A2: (4 marks) 
+>> Draw a diagram that illustrates a nested donation in your structure and 
+>> briefly explain how this works.
+
+---- ALGORITHMS ----
+
+>> A3: (3 marks) 
+>> How do you ensure that the highest priority waiting thread wakes up first for
+>> a (i) semaphore, (ii) lock, or (iii) condition variable?
+
+>> A4: (3 marks)
+>> Describe the sequence of events when a call to lock_acquire() causes a 
+>> priority donation. 
+>> How is nested donation handled?
+
+>> A5: (3 marks)
+>> Describe the sequence of events when lock_release() is called on a lock that 
+>> a higher-priority thread is waiting for.
+
+---- SYNCHRONIZATION ----
+
+>> A6: (2 marks)
+>> How do you avoid a race condition in thread_set_priority() when a thread 
+>> needs to recompute its effective priority, but the donated priorities 
+>> potentially change during the computation?
+>> Can you use a lock to avoid the race?
+
+---- RATIONALE ----
+
+>> A7: (3 marks)
+>> Why did you choose this design?  
+>> In what ways is it superior to another design you considered?
+
+              ADVANCED SCHEDULER
+              ==================
+
+---- DATA STRUCTURES ----
+
+>> B1: (2 marks)
+>> Copy here the declaration of each new or changed `struct' or `struct' member,
+>> global or static variable, `typedef', or enumeration. 
+>> Identify the purpose of each in roughly 25 words.
+
+---- ALGORITHMS ----
+
+>> B2: (3 marks)
+>> Suppose threads A, B, and C have nice values 0, 1, and 2 and each has a 
+>> recent_cpu value of 0. 
+>> Fill in the table below showing the scheduling decision, the priority and the
+>> recent_cpu values for each thread after each given number of timer ticks:
+
+timer  recent_cpu    priority   thread
+ticks   A   B   C   A   B   C   to run
+-----  --  --  --  --  --  --   ------
+ 0
+ 4
+ 8
+12
+16
+20
+24
+28
+32
+36
+
+>> B3: (2 marks) 
+>> Did any ambiguities in the scheduler specification make values in the table 
+>> uncertain? 
+>> If so, what rule did you use to resolve them?
+
+---- RATIONALE ----
+
+>> B4: (3 marks)
+>> Briefly critique your design, pointing out advantages and disadvantages in 
+>> your design choices.
